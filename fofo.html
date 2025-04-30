@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubuzima Book</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .book {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #333;
+    }
+
+    .page {
+      display: none;
+      animation: fade 0.5s;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="book">
+  <h1> HEAD: Ibibazo n'Ibisubizo ku Buzima n'Isi</h1>
+
+  <div id="pages">
+
+    <div class="page active">
+      <h2>Intangiriro</h2>
+      <p>"health" ni igitabo cy'ibibazo n'ibisubizo kigamije gukangurira abantu gutekereza no gushaka ibisobanuro by'ibintu bibakikije.</p>
+    </div>
+
+    <div class="page">
+      <h2>Igice cya 1: Isi n'Ibinyabuzima</h2>
+      <h3>ikibazo kuki ibiti bigira amababi atukura?</h3>
+      <p>Ni uko :chlorophylle igabanuka, hakigaragara ayandi mabara yari ahishe mu mababi, nka umutuku n'umuhondo.</p>
+    </div>
+
+    <div class="page">
+      <h2>Igice cya 2: Umubiri n'Ubuzima</h2>
+      <h3>ikibazo: kuki umutima utera cyane iyo dutinye?</h3>
+      <p>Adrenaline ituma umutima utera vuba kugirango utegure umubiri ku kwiruka cyangwa kwirwanaho.</p>
+    </div>
+
+    <div class="page">
+      <h2>Igice cya 3: Imico n’Imyumvire</h2>
+      <h3>ikibazo: kuki dukunda guhuza n'abantu duha ibitekerezo?</h3>
+      <p>Kuko bituma twumva dufite umutekano, dufite aho dushingiye, bigatuma ubusabane bwacu bukomera.</p>
+    </div>
+
+    <div class="page">
+      <h2>Gusoza</h2>
+      <p>Komeza kubaza, komeza gushakisha ibisubizo. "this" ni intangiriro y'ubwenge butavaho!</p>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button onclick="prevPage()">← Hindura</button>
+    <button onclick="nextPage()">Hindura →</button>
+  </div>
+
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  function showPage(index) {
+    pages.forEach(page => page.classList.remove('active'));
+    pages[index].classList.add('active');
+  }
+
+  function nextPage() {
+    if (currentPage < pages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
